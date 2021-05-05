@@ -1,133 +1,338 @@
-const alphabets = [
+const alphaNumbers = [
   {
     value: "a",
-    shiftValue: "A",
+    capitalizeValue: "A",
     type: "alphabet"
   },
   {
     value: "b",
-    shiftValue: "B",
+    capitalizeValue: "B",
     type: "alphabet"
   },
   {
     value: "c",
-    shiftValue: "C",
+    capitalizeValue: "C",
     type: "alphabet"
   },
   {
     value: "d",
-    shiftValue: "D",
+    capitalizeValue: "D",
     type: "alphabet"
   },
   {
     value: "e",
-    shiftValue: "E",
+    capitalizeValue: "E",
     type: "alphabet"
   },
   {
     value: "f",
-    shiftValue: "F",
+    capitalizeValue: "F",
     type: "alphabet"
   },
   {
     value: "g",
-    shiftValue: "G",
+    capitalizeValue: "G",
     type: "alphabet"
   },
   {
     value: "h",
-    shiftValue: "H",
+    capitalizeValue: "H",
     type: "alphabet"
   },
   {
     value: "i",
-    shiftValue: "I",
+    capitalizeValue: "I",
     type: "alphabet"
   },
   {
     value: "j",
-    shiftValue: "J",
+    capitalizeValue: "J",
     type: "alphabet"
-  },{
+  },
+  {
     value: "k",
-    shiftValue: "K",
+    capitalizeValue: "K",
     type: "alphabet"
   },
   {
     value: "l",
-    shiftValue: "L",
+    capitalizeValue: "L",
     type: "alphabet"
   },
   {
     value: "m",
-    shiftValue: "M",
+    capitalizeValue: "M",
     type: "alphabet"
   },
   {
     value: "n",
-    shiftValue: "N",
+    capitalizeValue: "N",
     type: "alphabet"
   },
   {
     value: "o",
-    shiftValue: "O",
+    capitalizeValue: "O",
     type: "alphabet"
   },
   {
     value: "p",
-    shiftValue: "P",
+    capitalizeValue: "P",
     type: "alphabet"
   },
   {
     value: "q",
-    shiftValue: "Q",
+    capitalizeValue: "Q",
     type: "alphabet"
   },
   {
     value: "r",
-    shiftValue: "R",
+    capitalizeValue: "R",
     type: "alphabet"
   },
   {
     value: "s",
-    shiftValue: "S",
+    capitalizeValue: "S",
     type: "alphabet"
   },
   {
     value: "t",
-    shiftValue: "T",
+    capitalizeValue: "T",
     type: "alphabet"
   },
   {
     value: "u",
-    shiftValue: "U",
+    capitalizeValue: "U",
     type: "alphabet"
   },
   {
     value: "v",
-    shiftValue: "V",
+    capitalizeValue: "V",
     type: "alphabet"
   },
   {
     value: "w",
-    shiftValue: "W",
+    capitalizeValue: "W",
     type: "alphabet"
   },
   {
     value: "x",
-    shiftValue: "X",
+    capitalizeValue: "X",
     type: "alphabet"
   },
   {
     value: "y",
-    shiftValue: "Y",
+    capitalizeValue: "Y",
     type: "alphabet"
   },
   {
     value: "z",
-    shiftValue: "Z",
+    capitalizeValue: "Z",
     type: "alphabet"
+  },
+  {
+    value: "1",
+    type: "number"
+  },
+  {
+    value: "2",
+    type: "number"
+  },
+  {
+    value: "3",
+    type: "number"
+  },
+  {
+    value: "4",
+    type: "number"
+  },
+  {
+    value: "5",
+    type: "number"
+  },
+  {
+    value: "6",
+    type: "number"
+  },
+  {
+    value: "7",
+    type: "number"
+  },
+  {
+    value: "8",
+    type: "number"
+  },
+  {
+    value: "9",
+    type: "number"
+  },
+  {
+    value: "0",
+    type: "number"
   }
 ];
 
-export default alphabets;
+const splChars = [
+  {
+    value: "`",
+    type: "splChar"
+  },
+  {
+    value: "~",
+    type: "splChar"
+  },
+  {
+    value: "!",
+    type: "splChar"
+  },
+  {
+    value: "@",
+    type: "splChar"
+  },
+  {
+    value: "#",
+    type: "splChar"
+  },
+  {
+    value: "$",
+    type: "splChar"
+  },
+  {
+    value: "%",
+    type: "splChar"
+  },
+  {
+    value: "^",
+    type: "splChar"
+  },
+  {
+    value: "&",
+    type: "splChar"
+  },
+  {
+    value: "*",
+    type: "splChar"
+  },
+  {
+    value: "(",
+    type: "splChar"
+  },
+  {
+    value: ")",
+    type: "splChar"
+  },
+  {
+    value: "#",
+    type: "splChar"
+  },
+  {
+    value: "-",
+    type: "splChar"
+  },
+  {
+    value: "_",
+    type: "splChar"
+  },
+  {
+    value: "=",
+    type: "splChar"
+  },
+  {
+    value: "+",
+    type: "splChar"
+  },
+  {
+    value: "[",
+    type: "splChar"
+  },
+  {
+    value: "]",
+    type: "splChar"
+  },
+  {
+    value: "{",
+    type: "splChar"
+  },
+  {
+    value: "}",
+    type: "splChar"
+  },
+  {
+    value: "|",
+    type: "splChar"
+  },
+  {
+    value: "\\",
+    type: "splChar"
+  },
+  {
+    value: ";",
+    type: "splChar"
+  },
+  {
+    value: ":",
+    type: "splChar"
+  },
+  {
+    value: "'",
+    type: "splChar"
+  },
+  {
+    value: "\"",
+    type: "splChar"
+  },
+  {
+    value: "<",
+    type: "splChar"
+  },
+  {
+    value: ">",
+    type: "splChar"
+  },
+  {
+    value: ",",
+    type: "splChar"
+  },
+  {
+    value: ".",
+    type: "splChar"
+  },
+  {
+    value: "?",
+    type: "splChar"
+  },
+  {
+    value: "/",
+    type: "splChar"
+  }
+];
+
+const actionKeys = [
+  {
+    displayName: "caps lock",
+    type: "capsLock"
+  },
+  {
+    displayName: "shift",
+    type: "shift"
+  },
+  {
+    displayName: "aA / @",
+    type: "toggle"
+  },
+  {
+    displayName: "space",
+    value: " ",
+    type: "space"
+  },
+  {
+    displayName: "enter",
+    value: "</br>",
+    type: "enter"
+  },
+  {
+    displayName: "delete",
+    type: "del"
+  }
+];
+
+export { alphaNumbers, actionKeys, splChars };
