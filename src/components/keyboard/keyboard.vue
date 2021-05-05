@@ -3,6 +3,7 @@
 
 <script>
 import { mapState } from "vuex";
+import { utilityService } from "@/service/utility";
 export default {
   data() {
     return {
@@ -19,7 +20,7 @@ export default {
       return this.isCapsLockPressed ^ this.isShiftPressed;
     },
     inputValue() {
-      // generate html to render from inputValueArr 
+      // generate html to render from inputValueArr
       let val = "<span>";
       if (this.inputValueArr.length) {
         for (let i = 0; i < this.inputValueArr.length; i++) {
@@ -32,8 +33,11 @@ export default {
       return val;
     },
     ...mapState(["alphaNumbers", "actionKeys", "splChars"]),
-    activeInputKeys() {
-      return this.isSplCharPressed ? this.splChars : this.alphaNumbers;
+    activeInputKeys: {
+      get: function() {
+        return this.isSplCharPressed ? this.splChars : this.alphaNumbers;
+      },
+      set: function() {}
     }
   },
   methods: {
@@ -91,6 +95,9 @@ export default {
     },
     doRandomRearrange() {
       // rearrange randomly activeInputKeys array
+      this.activeInputKeys = utilityService.randomRearrange(
+        this.activeInputKeys
+      );
     }
   }
 };
