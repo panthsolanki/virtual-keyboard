@@ -1,6 +1,26 @@
-<div class="containter">
-  <div>keyboard</div>
-  <div class="bg" v-for="(alphabet, index) in alphabetsInput" :key="index">
-    {{ getActiveValue(alphabet) }}
+<div class="container">
+  <h2 class="title">virtual keyboard</h2>
+  <div class="inputArea" v-html="inputValue"></div>
+  <div class="keyboardContainer">
+    <div class="keysContainer">
+      <div
+        v-for="(activeInputKey, index) in activeInputKeys"
+        :key="index"
+        :class="getCssClass(activeInputKey)"
+        @click="keyPressed(activeInputKey)"
+      >
+        {{ getActiveValue(activeInputKey) }}
+      </div>
+    </div>
+    <div class="actionKeysContainer">
+      <div
+        v-for="(actionKey, index) in actionKeys"
+        :key="index"
+        :class="getCssClass(actionKey)"
+        @click="keyPressed(actionKey)"
+      >
+        {{ actionKey.displayName }}
+      </div>
+    </div>
   </div>
 </div>

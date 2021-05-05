@@ -1,5 +1,70 @@
-.containter {
-  .bg {
-    background: red;
+$c1: #4a707a;
+$c2: #7697a0;
+$c3: #94b0b7;
+$c4: #c2c8c5;
+$c5: #ddddda;
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  cursor: default;
+
+  .title {
+    color: $c1;
+  }
+  .inputArea {
+    display: flex;
+    padding: 10px;
+    border: 1px solid $c2;
+    border-radius: 5px;
+    margin: 10px 80px;
+    height: 200px;
+    overflow: scroll;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: bold;
+    text-align: start;
+    color: $c1;
+  }
+
+  .keyboardContainer {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 100px 10px;
+    .keysContainer {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+    }
+    .key {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $c2;
+      border-radius: 5px;
+      height: 50px;
+      width: 50px;
+      margin: 5px;
+      cursor: pointer;
+      color: $c1;
+      &:hover {
+        font-weight: bold;
+        font-size: 18px;
+        color: $c2;
+      }
+
+      &.isActive {
+        font-weight: bold;
+        background-color: $c5;
+        color: $c2;
+      }
+    }
+    .actionKeysContainer {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      .key {
+        width: 200px;
+      }
+    }
   }
 }
