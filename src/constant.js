@@ -316,7 +316,7 @@ const actionKeys = [
     type: "shift"
   },
   {
-    displayName: "aA / @",
+    displayName: "aA1 / @",
     type: "toggle"
   },
   {
