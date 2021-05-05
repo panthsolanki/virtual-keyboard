@@ -1,4 +1,4 @@
-# virtual-keyboard
+# virtual-keyboard [link to UI](https://panthsolanki.github.io/virtual-keyboard/)
 
 ## Project setup
 ```
@@ -12,13 +12,5 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run deploy
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
